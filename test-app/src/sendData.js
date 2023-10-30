@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+ /* this is still not tailored to the application, this is just a shell */
 function App() {
   const [data, setData] = useState({ name: 'John Doe', age: 30 });
 
