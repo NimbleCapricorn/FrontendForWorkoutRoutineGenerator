@@ -8,7 +8,9 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/about');
+        const response = await axios.get('http://localhost:8000/generate-program');
+        console.log(response.data)
+        console.log("blabla")
         setClassList(response.data);
       } catch (error) {
         console.error('Error fetching data', error);
@@ -23,25 +25,25 @@ const App = () => {
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Subject</th>
-            <th>Teacher</th>
-            <th>Room</th>
-            <th>Time</th>
-            <th>Capacity</th>
+            <th>Week</th>
+            <th>Day</th>
+            <th>Exercise</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>Intensity</th>
+            <th>INOL</th>
           </tr>
         </thead>
         <tbody>
           {classList.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.subject}</td>
-              <td>{item.teacher}</td>
-              <td>{item.room}</td>
-              <td>{item.time}</td>
-              <td>{item.capacity}</td>
+            <tr key={item.ID}>
+              <td>{item.Week}</td>
+              <td>{item.Day}</td>
+              <td>{item.Name}</td>
+              <td>{item.NumberOfSets}</td>
+              <td>{item.NumberOfReps}</td>
+              <td>{item.Intensity}</td>
+              <td>{item.INOL}</td>
             </tr>
           ))}
         </tbody>
